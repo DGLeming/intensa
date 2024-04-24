@@ -46,7 +46,7 @@ function isSpammer($pdo, $ip){
 
 function banned($pdo, $ip){
 	$sth = $pdo->prepare("SELECT time FROM `bans` WHERE ip = ? AND time > ?");
-	$sth->execute(array($ip, time()-3600));
+	$sth->execute(array($ip, time()-3600*2));
 	$array = $sth->fetchAll();
 
 	if(count($array) > 0){
