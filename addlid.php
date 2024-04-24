@@ -55,10 +55,7 @@ if(!validate_city($cities, $city)) $something_wrong = true;
 if(!$something_wrong){
 	//post to db
 	postNewLid($pdo, $email, $name, $phone, $city);
-	// $sth = $pdo->prepare("INSERT INTO `lids` SET `email` = :email, `name` = :name, `phone` = :phone, `city` = :city");
-	// $sth->execute(array('email' => $email, 'name' => $name, 'phone' => $phone, 'city' => $city));
 } else {
 	echo 'wrong data, request denied!';
 }
-//echo $something_wrong;
 ?>

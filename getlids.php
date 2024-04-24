@@ -8,13 +8,13 @@ $sth = $pdo->prepare("SELECT * FROM `lids`");
 $sth->execute();
 $array = $sth->fetchAll();
 $csv_str = '';
-//print_r($array);
+
 } else {
 $sth = $pdo->prepare("SELECT * FROM `lids` WHERE city = ?");
 $sth->execute(array($city));
 $array = $sth->fetchAll();
 $csv_str = '?city='.$city;
-//print_r($array[1]);
+
 }
 ?>
 <!DOCTYPE html>
